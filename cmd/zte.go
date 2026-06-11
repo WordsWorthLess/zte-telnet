@@ -84,7 +84,7 @@ func openTelnet(pcMac []byte) error {
 		return errors.New("seed err")
 	}
 	_ = seed
-	mac := items[2]
+	mac := str[len(str)-6:]
 
 	clientRand := 0
 

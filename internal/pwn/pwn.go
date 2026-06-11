@@ -5,7 +5,6 @@ import (
 	"crypto/cipher"
 	"encoding/binary"
 	"encoding/hex"
-	"errors"
 	"fmt"
 	"strings"
 )
@@ -239,7 +238,10 @@ func EncryptAES(block cipher.Block, data []byte) ([]byte, error) {
 func DecryptAES(block cipher.Block, data []byte) ([]byte, error) {
 	blockSize := block.BlockSize()
 	if len(data)%blockSize != 0 {
-		return nil, errors.New("ciphertext is not a multiple of the block size")
+		paddingLen := blockSize - (len(data) % blockSize)
+		for i := 0; i < paddingLen; i++ {
+			data = append(data, 0)
+		}
 	}
 
 	plaintext := make([]byte, len(data))
