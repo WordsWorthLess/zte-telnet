@@ -184,7 +184,7 @@ func main() {
 	flag.StringVar(&opt.Addr, "i", "192.168.1.1", "ZTE router IP address")
 	flag.StringVar(&opt.Port, "p", "", "ZTE router Web Server binding Port")
 	flag.StringVar(&opt.Username, "u", "factorymode", "ZTE router username. To enable the default username, please push reset button for 15 seconds to perform a hard reset")
-	flag.StringVar(&opt.Password, "pw", "nE%jA@5b", "ZTE router password. To enable the default password, please push reset button for 15 seconds to perform a hard reset")
+	flag.StringVar(&opt.Password, "psd", "nE%jA@5b", "ZTE router password. To enable the default password, please push reset button for 15 seconds to perform a hard reset")
 	flag.StringVar(&opt.MAC, "m", "", "your pc mac address")
 	flag.StringVar(&opt.SlaveIP, "s", "", "slave Gateway IP address, only available for FTTR PON devices.")
 	
